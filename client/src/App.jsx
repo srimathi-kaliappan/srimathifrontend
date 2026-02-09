@@ -9,12 +9,12 @@ const App = () => {
   const[students,setStudents]=useState([]);
   //get
   const getStudents=async()=>{
-    const res=await axios.get("http://localhost:5000/students");
+    const res=await axios.get("https://srimathibackend-1.onrender.com/students");
     setStudents(res.data);//tracking 
   };
   //post data
   const addStudent=async ()=>{
-    await axios.post("http://localhost:5000/add",{
+    await axios.post("https://srimathibackend-1.onrender.com/add",{
       name,course
     });//to connect or post in backend
     getStudents();
@@ -23,7 +23,7 @@ const App = () => {
   }
   //delete data
   const deleteStudent=async(id) => {
-    await axios.delete(`http://localhost:5000/delete/${id}`);//delete data in backend
+    await axios.delete(`https://srimathibackend-1.onrender.com/delete/${id}`);//delete data in backend
     getStudents();//showing after deletion
   }
   useEffect(()=>{
